@@ -2,13 +2,12 @@ import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-import { ModalStyled, Overlay } from './Modal.styled';
+import { ModalStyle, Overlay } from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
 export class Modal extends Component {
   static propTypes = {
-    // children: PropTypes.node,
     onClose: PropTypes.func,
     largeImageURL: PropTypes.string.isRequired,
     tags: PropTypes.string,
@@ -36,9 +35,9 @@ export class Modal extends Component {
     const { largeImageURL, tags } = this.props;
     return createPortal(
       <Overlay onClick={this.handleBackdrop}>
-        <ModalStyled>
+        <ModalStyle>
           <img src={largeImageURL} alt={tags} />;
-        </ModalStyled>
+        </ModalStyle>
       </Overlay>,
       modalRoot
     );

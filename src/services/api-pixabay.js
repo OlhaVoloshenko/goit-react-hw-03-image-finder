@@ -13,10 +13,7 @@ const reqParams = {
 };
 
 let lastPage = false;
-/**
- * Fetch images from Pixabay.
- * @returns array of objects of images.
- */
+
 async function fetchImgs(query = '', page = 1) {
   reqParams.q = query;
   reqParams.page = page;

@@ -11,13 +11,6 @@ import { Container } from './Container.styled';
 import { fetchImgs, isLastPage } from 'services/api-pixabay';
 import { Modal } from './Modal/Modal';
 
-// const STATUS = {
-//   IDLE: 'idle',
-//   PENDING: 'pending',
-//   RESOLVED: 'resolved',
-//   REJECTED: 'rejected',
-// };
-
 export class App extends Component {
   state = {
     images: [],
@@ -29,12 +22,7 @@ export class App extends Component {
     showModal: false,
     largeImageURL: '',
     tags: '',
-    // status: STATUS.IDLE,
   };
-
-  // async componentDidMount() {
-  //   this.fetchNewImgs();
-  // }
 
   componentDidUpdate(_, prevState) {
     const { page, query } = this.state;

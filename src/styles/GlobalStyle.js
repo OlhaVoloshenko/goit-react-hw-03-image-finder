@@ -47,9 +47,11 @@ ul{
 }
 
 .message{
-  font-size: 24px;
-  color: tomato;
+  font-size: 32px;
+  color: #e40e0e;
   text-align: center;
+  padding-top: 60px;
+  font-weight: 700;
 }
 
 .noContent{

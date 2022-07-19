@@ -25,7 +25,6 @@ export class Searchbar extends Component {
     e.preventDefault();
 
     this.props.handleQuery(e.currentTarget.elements.query.value);
-    // e.target.reset();
   };
 
   render() {
