@@ -1,5 +1,5 @@
-import RingLoader from 'react-spinners/RingLoader';
 import PropTypes from 'prop-types';
+import RingLoader from 'react-spinners/RingLoader';
 import { Spinner } from './Loader.styled';
 
 export const Loader = ({ loading }) => {
