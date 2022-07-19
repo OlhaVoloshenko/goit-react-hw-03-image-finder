@@ -1,15 +1,15 @@
 import { Component } from 'react';
 
-import { Button } from './Button/Button';
-import { ImageGallery } from './ImageGallery/ImageGallery';
+import { Button } from './Button';
+import { ImageGallery } from './ImageGallery';
 import { Searchbar } from './SearchBar/SearchBar';
-import { Loader } from './Loader/Loader';
+import { Loader } from './Loader';
 
 import { GlobalStyle } from 'styles/GlobalStyle';
 import { Container } from './Container.styled';
 
 import { fetchImgs, isLastPage } from 'services/api-pixabay';
-import { Modal } from './Modal/Modal';
+import { Modal } from './Modal';
 
 export class App extends Component {
   state = {
