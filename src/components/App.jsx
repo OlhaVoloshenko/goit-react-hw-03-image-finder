@@ -103,7 +103,7 @@ export class App extends Component {
           <Searchbar handleQuery={this.handleQuery} />
           {error !== '' && <p className="message">{error}</p>}
           {error === '' && (
-            <ImageGallery images={images} openModal={this.openModal} />
+            <ImageGallery imgs={images} openModal={this.openModal} />
           )}
           {isLoading && <Loader />}
           {!isLoading &&
