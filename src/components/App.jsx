@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import { Button } from './Button';
 import { ImageGallery } from './ImageGallery';
-import { Searchbar } from './SearchBar/SearchBar';
+import { Searchbar } from './SearchBar';
 import { Loader } from './Loader';
 
 import { GlobalStyle } from 'styles/GlobalStyle';
@@ -10,6 +10,7 @@ import { Container } from './Container.styled';
 
 import { fetchImgs, isLastPage } from 'services/api-pixabay';
 import { Modal } from './Modal';
+import { ToastContainer } from 'react-toastify';
 
 export class App extends Component {
   state = {
@@ -33,7 +34,9 @@ export class App extends Component {
   }
 
   handleLoadMore = () => {
-    this.setState(prevState => ({ page: prevState.page + 1 }));
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   handleQuery = query => {
@@ -56,7 +59,7 @@ export class App extends Component {
 
       const respImgs = await fetchImgs(query, page);
 
-      if (respImgs.length === 0) {
+      if (respImgs.length === 0 || respImgs.length === '') {
         throw new Error(`No results were found for ${query}...`);
       }
 
@@ -122,6 +125,7 @@ export class App extends Component {
               tags={tags}
             />
           )}
+          <ToastContainer autoClose={3000} />
         </Container>
       </>
     );

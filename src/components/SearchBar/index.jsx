@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   SearchBarStyled,
   SearchForm,
@@ -18,12 +20,16 @@ export class Searchbar extends Component {
   };
 
   handleChange = e => {
-    this.setState({ query: e.target.value });
+    this.setState({ query: e.target.value.toLowerCase() });
   };
 
   handleSubmit = e => {
     e.preventDefault();
 
+    if (this.state.query.trim() === '') {
+      toast.error('Wow so easy !');
+      return;
+    }
     this.props.handleQuery(e.currentTarget.elements.query.value);
   };
 
